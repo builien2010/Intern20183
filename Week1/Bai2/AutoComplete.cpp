@@ -170,12 +170,12 @@ int main(){
     cin >> prefix ;
 
 
-    int comp = printAuto(root, prefix); 
+    int res = printAuto(root, prefix); 
   
-    if (comp == -1) 
+    if ( res == -1) 
         cout << "Tiền tố này có trong trie và không có gợi ý khác "; 
   
-    else if (comp == 0) 
+    else if (res == 0) 
         cout << "Không có từ nào gợi ý cho tiền tố này \n"; 
   
    

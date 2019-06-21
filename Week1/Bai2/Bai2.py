@@ -10,6 +10,7 @@ class Trie():
         self.root = TrieNode()
         self.word_list = [] # danh sách các từ gợi ý
 
+    # Hàm chèn 1 key vào Trie
     def insert(self, key):
         node = self.root
         
@@ -21,6 +22,7 @@ class Trie():
         
         node.last = True 
     
+    # Hàm thêm tất cả các key vào Trie
     def formTrie(self, keys):
         for key in keys:
             self.insert(key)
@@ -39,6 +41,7 @@ class Trie():
 
         return found and node and node.last
     
+    # Duyệt hết các nhánh trong Trie từ node cuối cùng trong prefix
     def recommend(self, node, prefix):
         if node.last:
             self.word_list.append(prefix)
@@ -50,7 +53,6 @@ class Trie():
 
         node = self.root 
         found = True 
-        temp_word = ''
 
         for a in list(query):
             if not node.children.get(a):
